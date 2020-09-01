@@ -49,7 +49,8 @@ module Docx
           end
           styles = { 'font-size' => "#{font_size}pt" }
           styles['text-align'] = alignment if alignment
-          html_tag(:p, content: html, styles: styles)
+          html
+          #html_tag(:p, content: html, styles: styles)
         end
 
 

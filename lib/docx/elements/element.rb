@@ -70,9 +70,10 @@ module Docx
         unless styles.nil? || styles.empty?
           styles_array = []
           styles.each do |property, value|
+            next if property == 'font-size'
             styles_array << "#{property.to_s}:#{value};"
           end
-          html << " style=\"#{styles_array.join('')}\""
+          html << " style=\"#{styles_array.join('')}\"" unless styles_array.empty?
         end
         html << ">"
         html << content if content
